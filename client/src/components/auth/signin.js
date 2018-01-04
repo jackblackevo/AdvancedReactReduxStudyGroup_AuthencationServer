@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
 
 class Signin extends Component {
+  constructor () {
+    super()
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  }
+
   handleFormSubmit ({ email, password }) {
     console.log(email, password)
   }
@@ -16,7 +21,7 @@ class Signin extends Component {
     } = this.props
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form onSubmit={handleSubmit(this.handleFormSubmit)}>
         <fieldset className='form-group'>
           <label>Email:</label>
           <input {...email} className='form-control' />
