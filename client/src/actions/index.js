@@ -1,16 +1,15 @@
+import axios from 'axios';
+
+const ROOT_URL = 'http://localhost:3090';
+
 export function signinUser ({ email, password }) {
     return function(dispatch){
       //  dispatch({type:  });
 
-      //submit email/pwd to server
+     // Submit email/password to the server
+    axios.post(`${ROOT_URL}/signin`, { email, password })
+   
 
-      //if request good
-      //update state( auth) 
-      //save JWT token 
-      //redirect to route 'feature'
-
-      //if request bad 
-      //show error 
     }
 };
 
