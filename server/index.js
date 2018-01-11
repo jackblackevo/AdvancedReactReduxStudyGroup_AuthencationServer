@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost:auth/auth')
 
 // App Setup
 app.use(morgan('combined')) // middleware: logging routes
-app.use(cors())
+app.use(cors()) //middleware: cors
 app.use(bodyParser.json({ type: '*/*' })) // middleware: json parsing
 router(app)
 
