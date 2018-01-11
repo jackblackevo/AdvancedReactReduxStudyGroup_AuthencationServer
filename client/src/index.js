@@ -8,8 +8,11 @@ import reduxThunk from 'redux-thunk'
 import App from './components/app'
 import Signin from './components/auth/signin'
 import reducers from './reducers'
+import actionLoggerMiddleware from './middleware/action_logger'
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
+
+
+const createStoreWithMiddleware = applyMiddleware(reduxThunk, actionLoggerMiddleware)(createStore)
 const store = createStoreWithMiddleware(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

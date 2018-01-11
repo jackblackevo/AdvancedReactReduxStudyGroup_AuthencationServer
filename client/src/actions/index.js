@@ -1,1 +1,11 @@
-export function signinUser ({ email, password }) {};
+
+
+
+
+export function signinUser ({ email, password }) {
+  return (dispatch) => {
+   
+
+  }
+
+};
