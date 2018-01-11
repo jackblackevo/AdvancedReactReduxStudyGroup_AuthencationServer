@@ -13,6 +13,7 @@ export function signinUser ({ email, password }) {
       .then(
         res => {
           dispatch({type: AUTH_USER})
+          localStorage.setItem('token', res.data.token)
           browserHistory.push('/feature')
         }
       )       
