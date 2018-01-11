@@ -11,7 +11,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 // DB setup
-mongoose.connect('mongodb://localhost/auth201712', { useMongoClient: true })
+mongoose.connect('mongodb://localhost/auth', { useMongoClient: true })
 // test
 
 // App Setup
