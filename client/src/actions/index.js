@@ -12,7 +12,7 @@ export function signinUser ({ email, password }) {
     axios.post(`${rootUrl}signin`, {email, password})   
       .then(
         res => {
-          console.log(res)
+          dispatch({type: AUTH_USER})
           browserHistory.push('/feature')
         }
       )       
