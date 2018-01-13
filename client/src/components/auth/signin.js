@@ -10,7 +10,7 @@ class Signin extends Component {
 
   handleFormSubmit ({ email, password }) {
     console.log(email, password)
-    this.props.signinUser({email, password})
+    this.props.signinUser({ email, password })
   }
 
   render () {
@@ -40,8 +40,8 @@ class Signin extends Component {
   }
 }
 
-function mapStateToProps ({auth}) {
-  return {auth}
+function mapStateToProps ({ auth }) {
+  return { auth }
 }
 
 export default reduxForm({
