@@ -1,18 +1,19 @@
 // Main starting point of application -
 // node 5.5 does note have all ES6 so we'll use require for imports
 
+const mongoose = require('mongoose')
 const express = require('express')
+const morgan = require('morgan')
+const cors = require('cors')
 const http = require('http')
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
-const app = express()
 const router = require('./router')
-const mongoose = require('mongoose')
-const cors = require('cors')
 
 // DB setup
 mongoose.connect('mongodb://localhost/auth', { useMongoClient: true })
 // test
+
+const app = express()
 
 // App Setup
 app.use(morgan('combined')) // middleware: logging routes

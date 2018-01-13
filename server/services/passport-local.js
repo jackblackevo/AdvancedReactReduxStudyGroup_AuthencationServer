@@ -1,6 +1,6 @@
 const passport = require('passport')
-const User = require('../models/user')
 const LocalStrategy = require('passport-local')
+const User = require('../models/user')
 
 // Create local strategy
 const localOptions = {
