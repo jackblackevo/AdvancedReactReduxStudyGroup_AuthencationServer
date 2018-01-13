@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { reduxForm } from 'redux-form'
+import * as actions from '../../actions'
 
 class Signin extends Component {
   constructor () {
@@ -9,6 +10,7 @@ class Signin extends Component {
 
   handleFormSubmit ({ email, password }) {
     console.log(email, password)
+    this.props.signinUser({email, password})
   }
 
   render () {
@@ -17,9 +19,11 @@ class Signin extends Component {
       fields: {
         email,
         password
-      }
+      },
+      auth
     } = this.props
 
+    console.log('is auth??', auth)
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit)}>
         <fieldset className='form-group'>
@@ -36,7 +40,11 @@ class Signin extends Component {
   }
 }
 
+function mapStateToProps ({auth}) {
+  return {auth}
+}
+
 export default reduxForm({
   form: 'signin',
   fields: ['email', 'password']
-})(Signin)
+}, mapStateToProps, actions)(Signin)
