@@ -15,7 +15,7 @@ export function signinUser ({ email, password }) {
         }
       )       
       .catch(()=>{
-          displatch(authError["Bad Login Info"])
+          dispatch(authError('Bad Login Info'))
         }
       )
   }
