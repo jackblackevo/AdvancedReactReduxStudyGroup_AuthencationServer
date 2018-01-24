@@ -13,15 +13,14 @@ class Signin extends Component {
     this.props.signinUser({ email, password })
   }
 
-  renderAlert(){
-    if(this.props.errorMessage){
-      return(
-        <div className="alert alert-danger">
+  renderAlert () {
+    if (this.props.errorMessage) {
+      return (
+        <div className='alert alert-danger'>
           <strong>Oops!</strong> {this.props.errorMessage}
-        </div>  
+        </div>
       )
     }
-
   }
 
   render () {
@@ -53,7 +52,7 @@ class Signin extends Component {
 }
 
 function mapStateToProps (state) {
-  return {errorMessage: state.auth.error}  
+  return { errorMessage: state.auth.error }
 }
 
 export default reduxForm({
