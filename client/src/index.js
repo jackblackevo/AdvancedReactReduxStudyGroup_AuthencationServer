@@ -14,12 +14,19 @@ import RequireAuth from './components/auth/require_auth'
 import Welcome from './components/welcome'
 
 import reducers from './reducers'
+import { AUTH_USER } from './actions/type'
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore)
 const store = createStoreWithMiddleware(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
+
+const token = localStorage.getItem('token')
+
+if (token) {
+  store.dispatch({ type: AUTH_USER })
+}
 
 ReactDOM.render(
   <Provider store={store}>
